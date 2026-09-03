@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://11xs7561f3r7"]
+
+[ext_resource type="Script" uid="uid://ctgaf537vjklh" path="res://Scenes/Granny/Granny.gd" id="1_5i418"]
+[ext_resource type="AudioStream" uid="uid://gubjq1ro8rev" path="res://Assets/Sounds/Granny/player_land.wav" id="2_gq8wc"]
+[ext_resource type="AudioStream" uid="uid://djk3gcji846lx" path="res://Assets/Sounds/Granny/player_jump.wav" id="3_rk2ul"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5atjx"]
+albedo_color = Color(0.84472924, 0.27463225, 0.44715118, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4y4i1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4y4i1"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4y4i1"]
+
+[node name="Granny" type="CharacterBody3D" unique_id=1440472770]
+script = ExtResource("1_5i418")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=111562237]
+material_override = SubResource("StandardMaterial3D_5atjx")
+mesh = SubResource("CapsuleMesh_4y4i1")
+
+[node name="Nose" type="MeshInstance3D" parent="Body" unique_id=531384591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.503639)
+mesh = SubResource("SphereMesh_4y4i1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1502133]
+shape = SubResource("CapsuleShape3D_4y4i1")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=82414961]
+transform = Transform3D(1, 0, 0, 0, 0.86056024, 0.5093487, 0, -0.5093487, 0.86056024, 0, 2.100473, 2.721076)
+
+[node name="LandSound" type="AudioStreamPlayer" parent="." unique_id=183773652]
+stream = ExtResource("2_gq8wc")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=1569021856]
+stream = ExtResource("3_rk2ul")
+pitch_scale = 1.5
+
+[node name="DebugLabel" type="Label3D" parent="." unique_id=1409718931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.109425, 0)
+billboard = 1
+text = "hello grannyyy
+"
+font_size = 48
