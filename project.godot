@@ -87,6 +87,11 @@ reload={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="platforms"
+3d_physics/layer_2="player_physics"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
