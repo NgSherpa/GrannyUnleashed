@@ -18,6 +18,22 @@ const CAM_TILT_LERP : float = 4.0
 @onready var granny: Node3D = $Granny
 @onready var jump_sound: AudioStreamPlayer = $JumpSound
 @onready var camera_controller: Node3D = $CameraController
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var walk_sound: AudioStreamPlayer = $WalkSound
+
+
+var is_moving: bool:
+	get: return not Vector2(velocity.x, velocity.z).is_zero_approx()
+
+
+var is_throwing: bool:
+	get:
+		return animation_tree.get("parameters/Ground/InvokeThrow/active")
+
+var is_falling: bool:
+	get: return velocity.y < 0.0
+
+
 
 
 var last_on_floor : bool = false
@@ -37,7 +53,9 @@ func _physics_process(delta: float) -> void:
 	handle_jump()
 	handle_movement(delta)
 	handle_camera(delta)
+	handle_throw()
 	move_and_slide()
+	update_walk_sound()
 	check_landing()
 	follow_camera()
 	update_camera_tilt(delta)
@@ -55,6 +73,18 @@ func handle_camera(delta : float) -> void:
 	var cam_turn : float = Input.get_axis("cam_left","cam_right")
 	debug_label.text += "\n cam: %.2f" % cam_turn
 	camera_controller.rotate_y(cam_turn * delta * CAM_ROTATION_SPEED)
+
+func handle_throw() -> void:
+	if Input.is_action_just_pressed("shoot") and is_on_floor() and !is_throwing:
+		animation_tree.set("parameters/Ground/InvokeThrow/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+
+func update_walk_sound() -> void:
+	var walking: bool = is_moving and is_on_floor()
+	if !walk_sound.playing  and walking:
+		walk_sound.play()
+	elif !walking and walk_sound.playing:
+			walk_sound.stop()
+
 
 func handle_movement(delta: float) -> void:
 	var input_dir: Vector2 = Input.get_vector("m_left", "m_right","m_fwd","m_back")

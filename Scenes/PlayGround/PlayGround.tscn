@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dpqfcpb38f7mx" path="res://Assets/Textures/rubber_tiles/rubber_tiles_nor_gl_1k.jpg" id="2_reeni"]
 [ext_resource type="Texture2D" uid="uid://bjb0xek7tacye" path="res://Assets/Textures/rubber_tiles/rubber_tiles_rough_1k.jpg" id="3_226dq"]
 [ext_resource type="PackedScene" uid="uid://11xs7561f3r7" path="res://Scenes/Granny/Granny.tscn" id="6_tytsd"]
+[ext_resource type="PackedScene" uid="uid://6vcfbf0ey3iu" path="res://Scenes/Projectile/Projectile.tscn" id="7_svqsq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r4os2"]
 sky_top_color = Color(0.30662042, 0.4411259, 0.6489217, 1)
@@ -58,4 +59,8 @@ visible = false
 shape = SubResource("ConcavePolygonShape3D_nngkf")
 
 [node name="Granny" parent="." unique_id=1440472770 instance=ExtResource("6_tytsd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42008197, 5.265358, 3.9909115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42008197, 5.3368435, 3.9909115)
+
+[node name="Projectile" parent="." unique_id=352862710 instance=ExtResource("7_svqsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4001026, 2.4146733)
+gravity = -2.0
