@@ -15,6 +15,11 @@ run/main_scene="uid://bcgutruvmgpec"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalHub="*uid://b31u5bj6gyhcb"
+SoundManager="*uid://c4xpbr4ns26er"
+
 [display]
 
 window/size/viewport_width=1920

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://6vcfbf0ey3iu"]
 
 [ext_resource type="Script" uid="uid://2qelfft763h7" path="res://Scenes/Projectile/Projectile.gd" id="1_f0bxn"]
+[ext_resource type="PackedScene" uid="uid://bwdupm5xx1pis" path="res://Scenes/ExplosionEffect/ExplosionEffect.tscn" id="2_abjx7"]
 [ext_resource type="Texture2D" uid="uid://b04ld2a26l08b" path="res://Assets/Models/Granny/Projectiles/food/Textures/colormap.png" id="2_i3jru"]
 [ext_resource type="AudioStream" uid="uid://din6y7pf8maan" path="res://Assets/Sounds/Projectiles/361222__rollin_pin_spin.wav" id="3_eux7e"]
 [ext_resource type="PackedScene" uid="uid://phu1401c8vvq" path="res://Scenes/LifeTimer/LifeTimer.tscn" id="4_i3jru"]
@@ -53,6 +54,9 @@ height = 1.2
 
 [node name="Projectile" type="Node3D" unique_id=352862710]
 script = ExtResource("1_f0bxn")
+gravity = -6.0
+speed = 20.0
+explosion_scene = ExtResource("2_abjx7")
 
 [node name="rollingPin" type="MeshInstance3D" parent="." unique_id=192465770]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)

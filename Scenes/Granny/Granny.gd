@@ -20,6 +20,7 @@ const CAM_TILT_LERP : float = 4.0
 @onready var camera_controller: Node3D = $CameraController
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var walk_sound: AudioStreamPlayer = $WalkSound
+@onready var shooter: Shooter = $Granny/Shooter
 
 
 var is_moving: bool:
@@ -77,6 +78,10 @@ func handle_camera(delta : float) -> void:
 func handle_throw() -> void:
 	if Input.is_action_just_pressed("shoot") and is_on_floor() and !is_throwing:
 		animation_tree.set("parameters/Ground/InvokeThrow/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+
+func fire_projectile() -> void:
+	shooter.shoot()
+
 
 func update_walk_sound() -> void:
 	var walking: bool = is_moving and is_on_floor()

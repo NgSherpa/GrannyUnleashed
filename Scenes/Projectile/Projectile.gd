@@ -4,6 +4,8 @@ extends Node3D
 @export var gravity : float = -1.0
 @export var speed : float = 4.0
 @export var spin_speed: float = -12.0
+@export var explosion_scene : PackedScene
+
 var velocity : Vector3 = Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -19,4 +21,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hit_box_hit() -> void:
+	if explosion_scene:
+		SignalHub.emit_add_scene_at_transform(global_transform, explosion_scene)
 	queue_free()
