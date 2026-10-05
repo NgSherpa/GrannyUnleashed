@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c05jr6qly00cf"]
+
+[ext_resource type="Script" uid="uid://cbtcjn0dpyv8t" path="res://Classes/PathMover.gd" id="1_dktyp"]
+[ext_resource type="ArrayMesh" uid="uid://b3jqd1bubaepc" path="res://Resources/Meshes/Scenary/SceneryModels_crate_moving_platform.res" id="2_fofso"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4y4i1"]
+size = Vector3(3.491211, 0.84106445, 3.4906158)
+
+[node name="MovingPlatformPf" type="PathFollow3D" unique_id=1319062692]
+progress = 149.60023
+rotation_mode = 0
+loop = false
+tilt_enabled = false
+script = ExtResource("1_dktyp")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=154357485]
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2134992515]
+transform = Transform3D(0.8949144, 0, -0.44623792, 0, 1, 0, 0.44623792, 0, 0.8949144, 0.03322059, 0.44030762, 0.025660157)
+shape = SubResource("BoxShape3D_4y4i1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2140728993]
+mesh = ExtResource("2_fofso")

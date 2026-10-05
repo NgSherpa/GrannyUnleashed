@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bjb0xek7tacye" path="res://Assets/Textures/rubber_tiles/rubber_tiles_rough_1k.jpg" id="3_226dq"]
 [ext_resource type="PackedScene" uid="uid://11xs7561f3r7" path="res://Scenes/Granny/Granny.tscn" id="6_tytsd"]
 [ext_resource type="PackedScene" uid="uid://dqo6kdn25pohp" path="res://Scenes/ObjectMaker/ObjectMaker.tscn" id="7_svqsq"]
+[ext_resource type="PackedScene" uid="uid://dahftvh444a1d" path="res://Scenes/PickUp/Key.tscn" id="8_10qt6"]
+[ext_resource type="PackedScene" uid="uid://85pgmkplk6s8" path="res://Scenes/PickUp/Jewel.tscn" id="9_q122q"]
+[ext_resource type="PackedScene" uid="uid://dgmbpxifd12w4" path="res://Scenes/PickUp/Coin.tscn" id="10_6tddg"]
+[ext_resource type="PackedScene" uid="uid://behtfd34mbi6o" path="res://Scenes/UI/GameUI/GameUi.tscn" id="11_q122q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r4os2"]
 sky_top_color = Color(0.30662042, 0.4411259, 0.6489217, 1)
@@ -62,3 +66,14 @@ shape = SubResource("ConcavePolygonShape3D_nngkf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42008197, 5.3368435, 3.9909115)
 
 [node name="ObjectMaker" parent="." unique_id=1426179264 instance=ExtResource("7_svqsq")]
+
+[node name="Key" parent="." unique_id=137838137 instance=ExtResource("8_10qt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.138613, 0)
+
+[node name="Jewel" parent="." unique_id=479007250 instance=ExtResource("9_q122q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191606, 2.1348612, 0)
+
+[node name="Coin" parent="." unique_id=473573795 instance=ExtResource("10_6tddg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5180761, 1.4724305, 1.6680944)
+
+[node name="GameUI" parent="." unique_id=1300604019 instance=ExtResource("11_q122q")]

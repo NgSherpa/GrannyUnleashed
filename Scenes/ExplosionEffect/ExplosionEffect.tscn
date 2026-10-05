@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://02p7k2spki73" path="res://Assets/Particles/trace_04.png" id="3_paxsq"]
 
 [sub_resource type="Animation" id="Animation_paxsq"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,7 +15,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -25,10 +24,10 @@ tracks/1/path = NodePath("Sparks:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.13333334),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_knkvm"]
@@ -146,7 +145,6 @@ explosion_sound = ExtResource("1_y08dl")
 libraries/ = SubResource("AnimationLibrary_paxsq")
 
 [node name="Smoke" type="GPUParticles3D" parent="." unique_id=1677649675]
-emitting = false
 amount = 16
 lifetime = 0.6
 one_shot = true

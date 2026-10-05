@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dahftvh444a1d"]
+
+[ext_resource type="PackedScene" uid="uid://hhv137kw5og4" path="res://Scenes/PickUp/PickUp.tscn" id="1_1833u"]
+[ext_resource type="AudioStream" uid="uid://djelseuvd5ypt" path="res://Assets/Sounds/PickUp/key_collect.ogg" id="2_cqbun"]
+[ext_resource type="PackedScene" uid="uid://b8y3pax2mrbkh" path="res://Assets/Models/platfomer/key.glb" id="2_pilpt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pilpt"]
+radius = 0.37914538
+
+[node name="Key" unique_id=137838137 instance=ExtResource("1_1833u")]
+collection_sound = ExtResource("2_cqbun")
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1411007148]
+shape = SubResource("SphereShape3D_pilpt")
+
+[node name="key2" parent="Visuals" parent_id_path=PackedInt32Array(662820590) index="0" unique_id=2041581414 instance=ExtResource("2_pilpt")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.15039328, 0)
+
+[node name="Rotator" parent="Visuals" parent_id_path=PackedInt32Array(662820590) index="1" unique_id=619245484]
+spin_axis = Vector3(0, 1, 0)
+spin_speed = 5.0

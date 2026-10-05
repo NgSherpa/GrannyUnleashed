@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://85pgmkplk6s8"]
+
+[ext_resource type="PackedScene" uid="uid://hhv137kw5og4" path="res://Scenes/PickUp/PickUp.tscn" id="1_4fu1e"]
+[ext_resource type="AudioStream" uid="uid://b7r73b2sle7my" path="res://Assets/Sounds/PickUp/Jewel_Collect.wav" id="2_napjs"]
+[ext_resource type="PackedScene" uid="uid://foa4ug5tbtus" path="res://Assets/Models/platfomer/jewel.glb" id="2_rsvig"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cqbun"]
+radius = 0.31994495
+
+[node name="Jewel" unique_id=137838137 instance=ExtResource("1_4fu1e")]
+collection_sound = ExtResource("2_napjs")
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1411007148]
+shape = SubResource("SphereShape3D_cqbun")
+
+[node name="jewel2" parent="Visuals" parent_id_path=PackedInt32Array(662820590) index="0" unique_id=923907026 instance=ExtResource("2_rsvig")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.27870762, 0)

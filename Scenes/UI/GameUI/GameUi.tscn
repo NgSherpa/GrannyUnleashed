@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://behtfd34mbi6o"]
+
+[ext_resource type="PackedScene" uid="uid://b05b6l0fo7noa" path="res://Scenes/UI/UICollected/UiCollected.tscn" id="1_e7p8g"]
+[ext_resource type="Texture2D" uid="uid://c2rqead6sbj3r" path="res://Assets/images/coin-gold.png" id="2_if2le"]
+[ext_resource type="Texture2D" uid="uid://d0btnpexglcx7" path="res://Assets/images/jewel.png" id="3_gdmg3"]
+[ext_resource type="Texture2D" uid="uid://dp43xaxfr7sne" path="res://Assets/images/key.png" id="4_gdmg3"]
+[ext_resource type="Texture2D" uid="uid://bhfuoty1brqsg" path="res://Assets/images/heart.png" id="5_j5s31"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6vyq"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.5594511, 0.0015332532, 0.37289098, 0.827451)
+
+[node name="GameUI" type="Control" unique_id=1300604019]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PC" type="PanelContainer" parent="." unique_id=756830086]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s6vyq")
+
+[node name="HBPickUps" type="HBoxContainer" parent="PC" unique_id=1936967893]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 16
+
+[node name="UICollectedCoins" parent="PC/HBPickUps" unique_id=562935436 instance=ExtResource("1_e7p8g")]
+layout_mode = 2
+item_image = ExtResource("2_if2le")
+
+[node name="UICollectedJewels" parent="PC/HBPickUps" unique_id=1715253210 instance=ExtResource("1_e7p8g")]
+layout_mode = 2
+item_image = ExtResource("3_gdmg3")
+
+[node name="UICollectedScore" parent="PC/HBPickUps" unique_id=1984543711 instance=ExtResource("1_e7p8g")]
+layout_mode = 2
+
+[node name="Key" type="TextureRect" parent="PC" unique_id=1923637546]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_gdmg3")
+
+[node name="HBHearts" type="HBoxContainer" parent="PC" unique_id=1392237017]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="H1" type="TextureRect" parent="PC/HBHearts" unique_id=1198132640]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_j5s31")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="H2" type="TextureRect" parent="PC/HBHearts" unique_id=1139931920]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_j5s31")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="H3" type="TextureRect" parent="PC/HBHearts" unique_id=112357944]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_j5s31")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="H4" type="TextureRect" parent="PC/HBHearts" unique_id=128495913]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_j5s31")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="H5" type="TextureRect" parent="PC/HBHearts" unique_id=1671203367]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_j5s31")
+expand_mode = 1
+stretch_mode = 4

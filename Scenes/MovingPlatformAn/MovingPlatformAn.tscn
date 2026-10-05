@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bv42y5qy4mjuo"]
+
+[ext_resource type="Script" uid="uid://ejqreufktbnq" path="res://Scenes/MovingPlatformAn/MovingPlatformAn.gd" id="1_ayg7e"]
+[ext_resource type="ArrayMesh" uid="uid://cxwb5812f4s1h" path="res://Resources/Meshes/Scenary/SceneryModels_crate_moving_platform.res" id="1_qqrkr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4y4i1"]
+size = Vector3(1.684082, 0.32781982, 1.6739349)
+
+[node name="MovingPlatformAn" type="Node3D" unique_id=1283819390]
+script = ExtResource("1_ayg7e")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=1824538518]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=675248346]
+transform = Transform3D(0.8993174, 0, -0.43729645, 0, 1, 0, 0.43729645, 0, 0.8993174, -0.004115857, 0.18704224, 0.014463633)
+shape = SubResource("BoxShape3D_4y4i1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1892046072]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("1_qqrkr")

@@ -1,0 +1,255 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://g5kcw7b7mueo"
+path="res://.godot/imported/SceneryModels.glb-01e1e6132e8ea70dd1e7b263397ade5b.scn"
+
+[deps]
+
+source_file="res://Assets/Models/Scenary/SceneryModels.glb"
+dest_files=["res://.godot/imported/SceneryModels.glb-01e1e6132e8ea70dd1e7b263397ade5b.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"meshes": {
+"SceneryModels_BubbleTree2": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_BubbleTree2.res",
+"save_to_file/path": "uid://b7ognlvxholwq"
+},
+"SceneryModels_Bubble_Tree_1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Bubble_Tree_1.res",
+"save_to_file/path": "uid://ohj3n278rkro"
+},
+"SceneryModels_Christmas_Tree": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Christmas_Tree.res",
+"save_to_file/path": "uid://csnhgs7x0qw00"
+},
+"SceneryModels_Christmas_Tree_Tall": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Christmas_Tree_Tall.res",
+"save_to_file/path": "uid://cqdn05wylv7py"
+},
+"SceneryModels_Island_blue_1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Island_blue_1.res",
+"save_to_file/path": "uid://dkoubdblyyi0a"
+},
+"SceneryModels_Island_green_1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Island_green_1.res",
+"save_to_file/path": "uid://cppnkkfetnctc"
+},
+"SceneryModels_Island_grey": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Island_grey.res",
+"save_to_file/path": "uid://bs4knfwkhr454"
+},
+"SceneryModels_Island_uneven_blue": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Island_uneven_blue.res",
+"save_to_file/path": "uid://rpfm0pdnhe36"
+},
+"SceneryModels_Pine_Tree_Small": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Pine_Tree_Small.res",
+"save_to_file/path": "uid://peqfenjijdnw"
+},
+"SceneryModels_Pine_Tree_Tall": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Pine_Tree_Tall.res",
+"save_to_file/path": "uid://c0lt7c8d5gbo7"
+},
+"SceneryModels_Platform_1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Platform_1.res",
+"save_to_file/path": "uid://wtidrseu08db"
+},
+"SceneryModels_Platform_1_short": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Platform_1_short.res",
+"save_to_file/path": "uid://dof4uxdl68okh"
+},
+"SceneryModels_Platform_with_Mountain_light_green": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_Platform_with_Mountain_light_green.res",
+"save_to_file/path": "uid://tgid31fudo1p"
+},
+"SceneryModels_StoneDouble": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_StoneDouble.res",
+"save_to_file/path": "uid://d2vd48gqar5vs"
+},
+"SceneryModels_StoneTriple": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_StoneTriple.res",
+"save_to_file/path": "uid://dvklp5spvw6r6"
+},
+"SceneryModels_barrel": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_barrel.res",
+"save_to_file/path": "uid://pb1co1vlexpj"
+},
+"SceneryModels_barrel_horizontal": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_barrel_horizontal.res",
+"save_to_file/path": "uid://jnxfd6f0gp58"
+},
+"SceneryModels_coin_gold": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_coin_gold.res",
+"save_to_file/path": "uid://cey3e12xeb45k"
+},
+"SceneryModels_crate_double": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_crate_double.res",
+"save_to_file/path": "uid://dqk7rn34u1qmu"
+},
+"SceneryModels_crate_moving_platform": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_crate_moving_platform.res",
+"save_to_file/path": "uid://b3jqd1bubaepc"
+},
+"SceneryModels_flowers-tall": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_flowers-tall.res",
+"save_to_file/path": "uid://c8wu7mvhhe0vh"
+},
+"SceneryModels_platform_2_brown": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_platform_2_brown.res",
+"save_to_file/path": "uid://bf6ohbm44mara"
+},
+"SceneryModels_platform_blue_stone_1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Resources/Meshes/Scenary/SceneryModels_platform_blue_stone_1.res",
+"save_to_file/path": "uid://bv40nvlslgehf"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1
