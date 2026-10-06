@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalHub="*uid://b31u5bj6gyhcb"
 SoundManager="*uid://c4xpbr4ns26er"
+ScoreManager="*uid://dnp7afg1xqoiy"
 
 [display]
 

@@ -9,6 +9,8 @@ radius = 0.40269318
 
 [node name="Coin" unique_id=137838137 instance=ExtResource("1_nufq0")]
 collection_sound = ExtResource("2_4wfm8")
+points = 5
+pickup_type = 1
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=1411007148]
 shape = SubResource("SphereShape3D_napjs")

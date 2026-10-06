@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dyyef7j6aiqu2"]
+
+[ext_resource type="Script" uid="uid://cll6qwr5k0xfu" path="res://Scenes/ScoreEffect/ScoreEffect.gd" id="1_wi0ec"]
+
+[node name="ScoreEffect" type="Label3D" unique_id=2094709512]
+billboard = 1
+text = "000"
+font_size = 38
+script = ExtResource("1_wi0ec")

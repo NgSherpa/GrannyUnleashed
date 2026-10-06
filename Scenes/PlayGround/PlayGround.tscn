@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://85pgmkplk6s8" path="res://Scenes/PickUp/Jewel.tscn" id="9_q122q"]
 [ext_resource type="PackedScene" uid="uid://dgmbpxifd12w4" path="res://Scenes/PickUp/Coin.tscn" id="10_6tddg"]
 [ext_resource type="PackedScene" uid="uid://behtfd34mbi6o" path="res://Scenes/UI/GameUI/GameUi.tscn" id="11_q122q"]
+[ext_resource type="PackedScene" uid="uid://bg2xwfp37sc6x" path="res://Scenes/LevelDoor/LevelDoor.tscn" id="12_6tddg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r4os2"]
 sky_top_color = Color(0.30662042, 0.4411259, 0.6489217, 1)
@@ -68,12 +69,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42008197, 5.3368435, 3.9909
 [node name="ObjectMaker" parent="." unique_id=1426179264 instance=ExtResource("7_svqsq")]
 
 [node name="Key" parent="." unique_id=137838137 instance=ExtResource("8_10qt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.138613, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.138613, -4.6326294)
 
 [node name="Jewel" parent="." unique_id=479007250 instance=ExtResource("9_q122q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191606, 2.1348612, 0)
 
+[node name="Jewel2" parent="." unique_id=1720702609 instance=ExtResource("9_q122q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191606, 2.1348612, 1.6338096)
+
 [node name="Coin" parent="." unique_id=473573795 instance=ExtResource("10_6tddg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5180761, 1.4724305, 1.6680944)
 
+[node name="Coin2" parent="." unique_id=1129981391 instance=ExtResource("10_6tddg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6747036, 1.4724305, 3.3672564)
+
+[node name="Coin3" parent="." unique_id=290685069 instance=ExtResource("10_6tddg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6747036, 1.4724305, 5.2297993)
+
 [node name="GameUI" parent="." unique_id=1300604019 instance=ExtResource("11_q122q")]
+
+[node name="LevelDoor" parent="." unique_id=1427005597 instance=ExtResource("12_6tddg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2860107, 0.4716797, -7.4917755)

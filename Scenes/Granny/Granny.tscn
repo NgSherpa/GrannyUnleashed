@@ -10,10 +10,10 @@
 [ext_resource type="Animation" uid="uid://dtwsfei7oqjqk" path="res://Resources/Animations/Granny/Climb.res" id="6_t6nek"]
 [ext_resource type="Animation" uid="uid://skypbb3un3mr" path="res://Resources/Animations/Granny/Die.res" id="7_wbpmo"]
 [ext_resource type="Animation" uid="uid://bguhdtmnyrmug" path="res://Resources/Animations/Granny/Fall.res" id="8_2jdjv"]
-[ext_resource type="Animation" uid="uid://baj4xl1oukx8w" path="res://Resources/Animations/Granny/Idle.res" id="9_2y4ru"]
+[ext_resource type="Animation" uid="uid://d2hsrb5u10k1t" path="res://Resources/Animations/Granny/Idle.res" id="9_2y4ru"]
 [ext_resource type="Animation" uid="uid://0manselpqew5" path="res://Resources/Animations/Granny/Jump.res" id="10_18bxt"]
 [ext_resource type="Animation" uid="uid://d2qjojehn0rjj" path="res://Resources/Animations/Granny/Pain.res" id="11_dmfeq"]
-[ext_resource type="Animation" uid="uid://cqjqr7bng5vy5" path="res://Resources/Animations/Granny/Run.res" id="12_mv2dp"]
+[ext_resource type="Animation" uid="uid://crhhugwplggyf" path="res://Resources/Animations/Granny/Run.res" id="12_mv2dp"]
 [ext_resource type="Animation" uid="uid://ds8dwl0maoh5t" path="res://Resources/Animations/Granny/Throw.res" id="13_ho4de"]
 [ext_resource type="Animation" uid="uid://paxuukr5jpln" path="res://Resources/Animations/Granny/Tpose.res" id="14_oh4xg"]
 [ext_resource type="PackedScene" uid="uid://bnfepf5dmh1vg" path="res://Scenes/Shooter/Shooter.tscn" id="15_2jdjv"]
@@ -1188,6 +1188,7 @@ pitch_scale = 1.5
 
 [node name="DebugLabel" type="Label3D" parent="." unique_id=1409718931]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.109425, 0)
+visible = false
 billboard = 1
 text = "hello grannyyy
 "

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bg2xwfp37sc6x"]
+
+[ext_resource type="PackedScene" uid="uid://crvitlidlca7e" path="res://Assets/Models/platfomer/fence-straight.glb" id="1_mwuxo"]
+[ext_resource type="Script" uid="uid://xkvkoeeyo6wj" path="res://Scenes/LevelDoor/LevelDoor.gd" id="1_p2puo"]
+[ext_resource type="PackedScene" uid="uid://20hxyad8mwt4" path="res://Assets/Models/platfomer/door-rotate-large.glb" id="2_p2puo"]
+[ext_resource type="AudioStream" uid="uid://by4c87il3cpdt" path="res://Assets/Sounds/Level/242503__door_closed.wav" id="4_mjrio"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4y4i1"]
+size = Vector3(2.9924774, 2.602295, 0.88842773)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5atjx"]
+size = Vector3(1, 1.8725586, 0.84228516)
+
+[node name="LevelDoor" type="Node3D" unique_id=1427005597]
+script = ExtResource("1_p2puo")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=1238420699]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="fence-straight2" parent="Visuals" unique_id=1218669864 instance=ExtResource("1_mwuxo")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -0.18327308)
+
+[node name="fence-straight3" parent="Visuals" unique_id=1193030083 instance=ExtResource("1_mwuxo")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.3269642, -0.18327308)
+
+[node name="door-rotate-large2" parent="Visuals" unique_id=465006440 instance=ExtResource("2_p2puo")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1157980187]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=633250477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002937317, 1.303833, 0.18151855)
+shape = SubResource("BoxShape3D_4y4i1")
+
+[node name="PlayerDetect" type="Area3D" parent="." unique_id=1697637787]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetect" unique_id=85751561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3706771, -0.61437744)
+shape = SubResource("BoxShape3D_5atjx")
+
+[node name="KeyLabel" type="Label3D" parent="." unique_id=1364988639]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.1051636, -0.45862663)
+visible = false
+text = "You need the key!"
+font_size = 52
+
+[node name="NoExitSound" type="AudioStreamPlayer" parent="." unique_id=984061409]
+stream = ExtResource("4_mjrio")
+
+[connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]

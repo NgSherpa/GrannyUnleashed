@@ -9,6 +9,8 @@ radius = 0.37914538
 
 [node name="Key" unique_id=137838137 instance=ExtResource("1_1833u")]
 collection_sound = ExtResource("2_cqbun")
+points = 50
+pickup_type = 3
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=1411007148]
 shape = SubResource("SphereShape3D_pilpt")
