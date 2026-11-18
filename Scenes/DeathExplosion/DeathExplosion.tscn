@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dfpbcty8nxsh3"]
+
+[ext_resource type="Script" uid="uid://blvuoyv00x6gh" path="res://Scenes/DeathExplosion/DeathExplosion.gd" id="1_u18tv"]
+[ext_resource type="PackedScene" uid="uid://blo27foximbt4" path="res://Scenes/EnemyExplode/EnemyExplode.tscn" id="2_1opcl"]
+
+[node name="DeathExplosion" type="Node3D" unique_id=1188607958]
+script = ExtResource("1_u18tv")
+explosion_scene = ExtResource("2_1opcl")
+killing_points = 10

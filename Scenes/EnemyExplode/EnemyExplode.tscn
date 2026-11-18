@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://blo27foximbt4"]
+
+[ext_resource type="Script" uid="uid://dr8jwc42wmtao" path="res://Scenes/ExplosionEffect/ExplosionEffect.gd" id="1_7cf4b"]
+[ext_resource type="Texture2D" uid="uid://blildwmwut120" path="res://Assets/Particles/smoke_04.png" id="2_0sflv"]
+[ext_resource type="AudioStream" uid="uid://dpcelf7w8ipka" path="res://Assets/Sounds/Effects/524305__bertsz__wet-spell-shoot.wav" id="2_7lwha"]
+[ext_resource type="Texture2D" uid="uid://02p7k2spki73" path="res://Assets/Particles/trace_04.png" id="3_i1fwc"]
+
+[sub_resource type="Animation" id="Animation_i1fwc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sparks:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0sflv"]
+resource_name = "Run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sparks:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1fwc"]
+_data = {
+&"RESET": SubResource("Animation_i1fwc"),
+&"Run": SubResource("Animation_0sflv")
+}
+
+[sub_resource type="Curve" id="Curve_v2fg0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.61463416, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tglyv"]
+curve = SubResource("Curve_v2fg0")
+
+[sub_resource type="Gradient" id="Gradient_i1fwc"]
+offsets = PackedFloat32Array(0.014534884, 0.97965115)
+colors = PackedColorArray(0.8920224, 0.26416042, 0.5496544, 1, 0.35678273, 0.8816564, 0.9969447, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gu3ag"]
+gradient = SubResource("Gradient_i1fwc")
+
+[sub_resource type="Curve" id="Curve_7lwha"]
+_data = [Vector2(0.004878044, 0.017857194), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5wwc7"]
+curve = SubResource("Curve_7lwha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4y4i1"]
+direction = Vector3(0, 1, 0)
+spread = 20.0
+initial_velocity_min = 0.19999999
+initial_velocity_max = 0.5
+gravity = Vector3(0, 3, 0)
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_5wwc7")
+color_initial_ramp = SubResource("GradientTexture1D_gu3ag")
+alpha_curve = SubResource("CurveTexture_tglyv")
+hue_variation_min = -0.11000002
+hue_variation_max = 0.09999997
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eumcp"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_0sflv")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_5atjx"]
+material = SubResource("StandardMaterial3D_eumcp")
+
+[sub_resource type="Gradient" id="Gradient_7lwha"]
+colors = PackedColorArray(1.8784556, 0.51333857, 1.4286771, 1, 0.2853667, 1.021462, 1.1204327, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lil44"]
+gradient = SubResource("Gradient_7lwha")
+
+[sub_resource type="Curve" id="Curve_838hw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5365854, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6211n"]
+curve = SubResource("Curve_838hw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bj5ct"]
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+scale_max = 1.4
+scale_curve = SubResource("CurveTexture_6211n")
+color = Color(2.2005713, 2.2005713, 2.2005713, 1)
+color_initial_ramp = SubResource("GradientTexture1D_lil44")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3qw0"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_i1fwc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_838hw"]
+material = SubResource("StandardMaterial3D_g3qw0")
+
+[node name="EnemyExplode" type="Node3D" unique_id=1089573249]
+script = ExtResource("1_7cf4b")
+explosion_sound = ExtResource("2_7lwha")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1499835513]
+libraries/ = SubResource("AnimationLibrary_i1fwc")
+
+[node name="Smoke" type="GPUParticles3D" parent="." unique_id=934067882]
+emitting = false
+amount = 16
+one_shot = true
+preprocess = 0.3
+explosiveness = 0.83
+process_material = SubResource("ParticleProcessMaterial_4y4i1")
+draw_pass_1 = SubResource("QuadMesh_5atjx")
+
+[node name="Sparks" type="GPUParticles3D" parent="." unique_id=164396361]
+emitting = false
+amount = 32
+lifetime = 0.8
+one_shot = true
+preprocess = 0.3
+explosiveness = 0.78
+process_material = SubResource("ParticleProcessMaterial_bj5ct")
+draw_pass_1 = SubResource("QuadMesh_838hw")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

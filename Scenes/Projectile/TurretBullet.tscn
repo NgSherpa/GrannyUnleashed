@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cn3nlsr2vjnfc"]
+
+[ext_resource type="PackedScene" uid="uid://6vcfbf0ey3iu" path="res://Scenes/Projectile/Projectile.tscn" id="1_86gv3"]
+[ext_resource type="PackedScene" uid="uid://cq724d7tbafgy" path="res://Assets/Models/TowerDefense/weapon-ammo-bullet.glb" id="2_2vunv"]
+[ext_resource type="AudioStream" uid="uid://ba8s6plaljvd2" path="res://Assets/Sounds/Projectiles/728264__bryce835__rocket-launch.mp3" id="3_3ap7l"]
+[ext_resource type="Texture2D" uid="uid://o3irfwksy4fw" path="res://Assets/Particles/circle_05.png" id="4_3ap7l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r1quj"]
+radius = 0.12
+height = 0.4
+
+[sub_resource type="Gradient" id="Gradient_3ap7l"]
+offsets = PackedFloat32Array(0.06910569, 0.5813008)
+colors = PackedColorArray(0, 0.76862746, 0.7176471, 1, 0.7882353, 0.43137255, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8oc0n"]
+gradient = SubResource("Gradient_3ap7l")
+
+[sub_resource type="Curve" id="Curve_87xp4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6346154, 0.7946429), 0.0, 0.0, 0, 0, Vector2(1, 0.008928657), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_m0x77"]
+curve = SubResource("Curve_87xp4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eumcp"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.06
+emission_ring_radius = 0.05
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 0, 1)
+spread = 1.0
+initial_velocity_min = 0.79999995
+initial_velocity_max = 1.1
+gravity = Vector3(0, 0, 0)
+scale_min = 0.39999998
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_m0x77")
+color_ramp = SubResource("GradientTexture1D_8oc0n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5atjx"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_3ap7l")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_4y4i1"]
+material = SubResource("StandardMaterial3D_5atjx")
+size = Vector2(0.5, 0.5)
+
+[node name="TurretBullet" unique_id=352862710 instance=ExtResource("1_86gv3")]
+gravity = 0.0
+speed = 10.0
+
+[node name="weapon-ammo-bullet2" parent="." index="0" unique_id=1269924196 instance=ExtResource("2_2vunv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="FlightSound" parent="." index="1" unique_id=775615153]
+stream = ExtResource("3_3ap7l")
+
+[node name="LifeTimer" parent="." index="2" unique_id=675081177]
+wait_time = 8.0
+
+[node name="HitBox" parent="." index="3" unique_id=816808066]
+collision_layer = 16
+collision_mask = 9
+shape = SubResource("CapsuleShape3D_r1quj")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="4" unique_id=1660211944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.20248413)
+amount = 92
+lifetime = 0.8
+randomness = 0.48
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_eumcp")
+draw_pass_1 = SubResource("QuadMesh_4y4i1")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://oi4qnsavj7la"]
+
+[ext_resource type="Script" uid="uid://daste5st4mo2y" path="res://Scenes/TrackPlayer/TrackPlayer.gd" id="1_w0gi2"]
+
+[node name="TrackPlayer" type="Node3D" unique_id=469343068]
+script = ExtResource("1_w0gi2")
+sight_range = -25.0
+
+[node name="RayCast" type="RayCast3D" parent="." unique_id=1473454398]
+target_position = Vector3(0, 0, -20)
+collision_mask = 3

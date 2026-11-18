@@ -14,6 +14,15 @@ signal points(amount: int, at: Vector3) #vector 3 to know where to add the float
 
 signal score_changed(total: int)
 
+signal player_health_changed(current : int)
+
+signal player_hit
+
+func emit_player_hit() -> void:
+	player_hit.emit()
+
+func emit_player_health_changed(current : int) -> void:
+	player_health_changed.emit(current)
 
 func emit_score_changed(total: int) -> void:
 	score_changed.emit(total)

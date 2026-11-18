@@ -6,3 +6,4 @@ enum PickUpType {None, Coin, Jewel, LevelKey}
 
 
 const GROUP_PICKUP: String = "pickup"
+const GROUP_GRANNY: String = "granny"

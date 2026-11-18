@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b7saev0dxilha"]
+
+[ext_resource type="Script" uid="uid://cjm4n6c3xwpj5" path="res://Scenes/Bomb/BombExplode.gd" id="1_faiq5"]
+[ext_resource type="AudioStream" uid="uid://re3fp3iuw3vx" path="res://Assets/Sounds/Bomb/274090__bombdropexplosion.wav" id="2_gqjyb"]
+[ext_resource type="PackedScene" uid="uid://coy4b06qg7g3n" path="res://Scenes/HitBox/HitBox.tscn" id="2_irlfq"]
+[ext_resource type="PackedScene" uid="uid://phu1401c8vvq" path="res://Scenes/LifeTimer/LifeTimer.tscn" id="3_gqjyb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pmpy1"]
+height = 1.0
+radius = 5.0
+
+[node name="BombExplode" type="Node3D" unique_id=678392485]
+script = ExtResource("1_faiq5")
+sound = ExtResource("2_gqjyb")
+
+[node name="HitBox" parent="." unique_id=816808066 instance=ExtResource("2_irlfq")]
+transform = Transform3D(0.036489446, 0, 0.99933404, 0, 1, 0, -0.99933404, 0, 0.036489446, 0, 0.52276707, 0)
+collision_layer = 16
+damage = 2
+shape = SubResource("CylinderShape3D_pmpy1")
+
+[node name="LifeTimer" parent="." unique_id=675081177 instance=ExtResource("3_gqjyb")]
+wait_time = 3.0

@@ -6,7 +6,8 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animation_player.play("Run")
-	SoundManager.play_3d(explosion_sound, global_position)
+	if explosion_sound:
+		SoundManager.play_3d(explosion_sound, global_position)
 	
 
 

@@ -2,6 +2,7 @@ class_name Granny
 
 extends CharacterBody3D
 
+const STOMP_BOUNCE : float = 10.0
 const GRAVITY : float = -30
 const FALL_GRAVITY: float = -55.0
 const  ROTATE_LERP : float = 10.0
@@ -21,6 +22,10 @@ const CAM_TILT_LERP : float = 4.0
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var walk_sound: AudioStreamPlayer = $WalkSound
 @onready var shooter: Shooter = $Granny/Shooter
+@onready var hurt_sound: AudioStreamPlayer = $HurtSound
+@onready var health: Health = $Health
+@onready var land_puff: GPUParticles3D = $LandPuff
+@onready var stomp_box: HitBox = $StompBox
 
 
 var is_moving: bool:
@@ -40,12 +45,30 @@ var is_falling: bool:
 var last_on_floor : bool = false
 var cam_base_tilt: float = 0.0
 var ground_y : float = 0.0
-
+var should_bounce : bool = false
+var bounce_speed : float = 0.0
 
 
 func _ready() -> void:
 	cam_base_tilt = camera_controller.rotation.x
 	ground_y = global_position.y
+	late_init.call_deferred()
+
+func _enter_tree() -> void:
+	add_to_group(GameDefs.GROUP_GRANNY)
+
+
+
+
+func late_init() -> void:
+	SignalHub.emit_player_health_changed(health.health)
+
+
+func start_bounce(new_bounce_speed : float) -> void:
+	should_bounce = true
+	bounce_speed = new_bounce_speed
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,11 +78,35 @@ func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	handle_camera(delta)
 	handle_throw()
+	consume_bounce()
 	move_and_slide()
+	update_stomp_box()
 	update_walk_sound()
 	check_landing()
 	follow_camera()
 	update_camera_tilt(delta)
+
+func update_stomp_box() -> void:
+	if is_falling != stomp_box.monitoring:
+		set_area_active(stomp_box, is_falling)
+
+
+func set_area_active(area: Area3D, active: bool) -> void:
+	area.set_monitorable.call_deferred(active)
+	area.set_monitoring.call_deferred(active)
+
+
+
+func consume_bounce() -> void:
+	if !should_bounce: return
+	should_bounce = false
+	velocity.y = bounce_speed
+	jump_sound.play()
+
+
+
+
+
 
 func update_camera_tilt(delta:float) -> void:
 	var height: float = maxf(0.0, global_position.y - ground_y)
@@ -71,7 +118,7 @@ func follow_camera() -> void:
 	camera_controller.global_position = camera_controller.global_position.lerp(global_position, 0.3)
 
 func handle_camera(delta : float) -> void:
-	var cam_turn : float = Input.get_axis("cam_left","cam_right")
+	var cam_turn : float = Input.get_axis("cam_right","cam_left")
 	debug_label.text += "\n cam: %.2f" % cam_turn
 	camera_controller.rotate_y(cam_turn * delta * CAM_ROTATION_SPEED)
 
@@ -116,6 +163,29 @@ func apply_gravity(delta: float) -> void:
 func check_landing() -> void:
 	if not last_on_floor and is_on_floor():
 		land_sound.play()
+		land_puff.restart()
 	if is_on_floor():
 		ground_y = global_position.y
 	last_on_floor = is_on_floor()
+
+
+func _on_health_health_changed(current: int) -> void:
+	SignalHub.emit_player_health_changed(current)
+
+
+func _on_health_died() -> void:
+	set_physics_process(false)
+
+
+func _on_stomp_box_hit() -> void:
+	velocity.y = STOMP_BOUNCE
+	SignalHub.emit_player_hit()
+
+
+func _on_fell_off() -> void:
+	health.take_damage(health.max_health)
+
+
+func _on_hurt_box_hurt() -> void:
+	hurt_sound.play()
+	SignalHub.emit_player_hit()

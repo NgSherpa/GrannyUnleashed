@@ -99,3 +99,63 @@ layout_mode = 2
 texture = ExtResource("5_j5s31")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="GameOverRect" type="ColorRect" parent="." unique_id=676904403]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.54509807, 0.64705884, 0.45882353)
+
+[node name="GameOverLabel" type="Label" parent="GameOverRect" unique_id=574027247]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -9.5
+offset_right = 20.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.3420747, 0.66106975, 0.96371657, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 78
+text = "fvdscdfcdcfvdfvsfdvsdfcxcdcdacsd"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelCompleteRect" type="ColorRect" parent="." unique_id=1873193021]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25237405, 0.8076867, 0.6998066, 0.45882353)
+
+[node name="LevelCompleteLabel" type="Label" parent="LevelCompleteRect" unique_id=2138113127]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -9.5
+offset_right = 20.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.90494317, 0.5704318, 0.63995737, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 78
+text = "fvdscdfcdcfvdfvsfdvsdfcxcdcdacsd"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bh7u2ujyvhsoe"]
+
+[ext_resource type="Script" uid="uid://c8nixj2a0oh4d" path="res://Scenes/WalkingEnemy/WalkingEnemy.gd" id="1_woo73"]
+[ext_resource type="PackedScene" uid="uid://b7qpm5c7mrvjn" path="res://Scenes/HurtBox/HurtBox.tscn" id="2_j5353"]
+[ext_resource type="PackedScene" uid="uid://coy4b06qg7g3n" path="res://Scenes/HitBox/HitBox.tscn" id="3_dxor8"]
+[ext_resource type="PackedScene" uid="uid://oi4qnsavj7la" path="res://Scenes/TrackPlayer/TrackPlayer.tscn" id="4_woo73"]
+[ext_resource type="PackedScene" uid="uid://dfpbcty8nxsh3" path="res://Scenes/DeathExplosion/DeathExplosion.tscn" id="5_j5353"]
+[ext_resource type="PackedScene" uid="uid://2uqbm26oydja" path="res://Scenes/FellOff/FellOff.tscn" id="6_dxor8"]
+
+[node name="WalkingEnemy" type="CharacterBody3D" unique_id=523082250]
+collision_layer = 0
+script = ExtResource("1_woo73")
+
+[node name="HurtBox" parent="." unique_id=2139929929 instance=ExtResource("2_j5353")]
+collision_layer = 32
+collision_mask = 4
+
+[node name="HitBox" parent="." unique_id=816808066 instance=ExtResource("3_dxor8")]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1184702025]
+
+[node name="WalkSound" type="AudioStreamPlayer3D" parent="." unique_id=1617529268]
+
+[node name="AngrySound" type="AudioStreamPlayer3D" parent="." unique_id=1138956737]
+
+[node name="TrackPlayer" parent="." unique_id=469343068 instance=ExtResource("4_woo73")]
+
+[node name="DeathExplosion" parent="." unique_id=1188607958 instance=ExtResource("5_j5353")]
+
+[node name="FellOff" parent="." unique_id=1334184799 instance=ExtResource("6_dxor8")]
+
+[connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
+[connection signal="lost" from="TrackPlayer" to="." method="_on_track_player_lost"]
+[connection signal="spotted" from="TrackPlayer" to="." method="_on_track_player_spotted"]
+[connection signal="fell_off" from="FellOff" to="." method="_on_fell_off"]

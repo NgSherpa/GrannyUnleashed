@@ -3,10 +3,6 @@ extends Node
 var _scores: Dictionary[GameDefs.PickUpType, CollectibleScore] = {}
 var _points : int = 0
 
-
-
-
-
 func start_level() -> void:
 	count_pickups()
 	SignalHub.emit_update_ui(_scores)

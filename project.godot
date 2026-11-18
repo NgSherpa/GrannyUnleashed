@@ -101,6 +101,12 @@ reload={
 
 3d_physics/layer_1="platforms"
 3d_physics/layer_2="player_physics"
+3d_physics/layer_3="player_hit"
+3d_physics/layer_4="player_hurt"
+3d_physics/layer_5="enemy_hit"
+3d_physics/layer_6="enemy_hurt"
+3d_physics/layer_7="turret_physics"
+3d_physics/layer_8="boundary"
 
 [physics]
 

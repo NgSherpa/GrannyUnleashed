@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://wg341og1m5tu"]
+
+[ext_resource type="PackedScene" uid="uid://dvffas75tew4i" path="res://Assets/Models/TowerDefense/tower-square-build-b.glb" id="1_8n1bl"]
+[ext_resource type="Script" uid="uid://m5d78503soob" path="res://Scenes/Turret/Turret.gd" id="1_lkdj1"]
+[ext_resource type="PackedScene" uid="uid://bx2cp8xevbfyk" path="res://Assets/Models/TowerDefense/weapon-turret.glb" id="2_8gyjb"]
+[ext_resource type="PackedScene" uid="uid://bnfepf5dmh1vg" path="res://Scenes/Shooter/Shooter.tscn" id="3_8gyjb"]
+[ext_resource type="PackedScene" uid="uid://oi4qnsavj7la" path="res://Scenes/TrackPlayer/TrackPlayer.tscn" id="4_qyqsk"]
+[ext_resource type="PackedScene" uid="uid://d3siam2gti8t3" path="res://Scenes/Health/Health.tscn" id="5_lkdj1"]
+[ext_resource type="AudioStream" uid="uid://skvhr4lt2cma" path="res://Assets/Sounds/Projectiles/472688__silverillusionist__fire-burst.wav" id="5_o0rmu"]
+[ext_resource type="PackedScene" uid="uid://cn3nlsr2vjnfc" path="res://Scenes/Projectile/TurretBullet.tscn" id="6_f0w6a"]
+[ext_resource type="PackedScene" uid="uid://b7qpm5c7mrvjn" path="res://Scenes/HurtBox/HurtBox.tscn" id="6_o0rmu"]
+[ext_resource type="PackedScene" uid="uid://dfpbcty8nxsh3" path="res://Scenes/DeathExplosion/DeathExplosion.tscn" id="10_pqcig"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_harrd"]
+radius = 1.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4y4i1"]
+size = Vector3(2.6, 2.6, 2.6)
+
+[node name="Turret" type="Node3D" unique_id=1713662689]
+script = ExtResource("1_lkdj1")
+
+[node name="tower-square-build-b2" parent="." unique_id=47163736 instance=ExtResource("1_8n1bl")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1976040370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4733973, 0)
+
+[node name="weapon-turret2" parent="Pivot" unique_id=947319658 instance=ExtResource("2_8gyjb")]
+transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 0, 0, 0)
+
+[node name="Shooter" parent="Pivot" unique_id=2047705067 instance=ExtResource("3_8gyjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6864433, -0.6818043)
+shoot_stream = ExtResource("5_o0rmu")
+projectile_scene = ExtResource("6_f0w6a")
+
+[node name="TrackPlayer" parent="." unique_id=469343068 instance=ExtResource("4_qyqsk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0204449, 0)
+sight_range = -15.0
+max_up = 30.0
+max_down = 30.0
+
+[node name="Health" parent="." unique_id=1679891175 instance=ExtResource("5_lkdj1")]
+max_health = 2
+
+[node name="HurtBox" parent="." unique_id=2139929929 node_paths=PackedStringArray("health") instance=ExtResource("6_o0rmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0359063, 0)
+collision_layer = 32
+collision_mask = 4
+shape = SubResource("CylinderShape3D_harrd")
+health = NodePath("../Health")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1340095389]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=89038199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3142092, 0)
+shape = SubResource("BoxShape3D_4y4i1")
+
+[node name="Timer" type="Timer" parent="." unique_id=1995503894]
+wait_time = 2.0
+autostart = true
+
+[node name="DeathExplosion" parent="." unique_id=1188607958 instance=ExtResource("10_pqcig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3142092, 0)
+killing_points = 50
+
+[connection signal="died" from="Health" to="." method="_on_health_died"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -5,6 +5,7 @@ extends Area3D
 
 signal hit
 
+@export var damage : int = 1
 @export var shape : Shape3D:
 	set(value):
 		shape = value
@@ -27,4 +28,8 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
+	hit.emit()
+
+
+func _on_area_entered(area: Area3D) -> void:
 	hit.emit()

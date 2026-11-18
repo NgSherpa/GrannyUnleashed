@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bdw2sdiw1wgy3"]
+
+[ext_resource type="Script" uid="uid://c4ph1lr832c1e" path="res://Scenes/BounceButton/BounceButton.gd" id="1_8unaw"]
+[ext_resource type="AudioStream" uid="uid://cgy5yyhivnsq5" path="res://Assets/Sounds/Level/bouncing_pad.wav" id="1_ssdoo"]
+[ext_resource type="PackedScene" uid="uid://dc7yd1e471xx4" path="res://Assets/Models/platfomer/button-square.glb" id="1_tgb54"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tgb54"]
+size = Vector3(0.7998657, 0.38934326, 0.8109741)
+
+[node name="BounceButton" type="Area3D" unique_id=1235959283]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_8unaw")
+bounce_speed = 50.0
+
+[node name="button-square2" parent="." unique_id=1485667165 instance=ExtResource("1_tgb54")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1876367016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002532959, 0.21310425, 0.0025939941)
+shape = SubResource("BoxShape3D_tgb54")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=1545687879]
+stream = ExtResource("1_ssdoo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
