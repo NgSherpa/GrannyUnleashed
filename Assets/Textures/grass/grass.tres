@@ -1,0 +1,31 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckrod71hkqsq3"]
+
+[ext_resource type="Texture2D" uid="uid://7f438ecv4m10" path="res://Assets/Textures/grass/grass_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dbkkbnlm0f5cd" path="res://Assets/Textures/grass/grass_orm.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cl1438awyfjh4" path="res://Assets/Textures/grass/grass_normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://041kmx0lrkev" path="res://Assets/Textures/grass/grass_heightmap.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bumt6jjya7iwn" path="res://Assets/Textures/grass/grass_emission.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://4brk6ssduney" path="res://Assets/Textures/grass/grass_sss.png" id="6"]
+
+[resource]
+albedo_texture = ExtResource("1")
+metallic_texture = ExtResource("2")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("5")
+normal_enabled = true
+normal_texture = ExtResource("3")
+ao_enabled = true
+ao_texture = ExtResource("2")
+heightmap_scale = 25.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("4")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 1.0
+subsurf_scatter_texture = ExtResource("6")
+uv1_scale = Vector3(32, 32, 32)
